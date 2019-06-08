@@ -156,13 +156,16 @@ $result = mysqli_query($con, $sql);
 							<div class="col-md-4">
 								<input type="text" class="form-control" name="cateName" placeholder="Category Name" required />
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<select class="form-control" name="status">
    								  <option value="1">Active</option>
    								  <option value="0">Non - Active</option>
    								 </select>
 							</div>
-							<div class="col-md-4">
+							<div class='col-md-3'>
+								<input type="file" class="form-control" name="image" placeholder="Category image" required />
+							</div>
+							<div class="col-md-2">
 
 								<input type="submit" class="btn btn-success" />
 							</div>

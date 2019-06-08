@@ -70,7 +70,7 @@ $('[name="addWall"]').click(function(){
  
 
   function HideAll() {
-   	  $("#addWallpaper").hide();
+   	$("#addWallpaper").hide();
     $("#addCategory").hide();
     $("#editInfo").hide();
    	 

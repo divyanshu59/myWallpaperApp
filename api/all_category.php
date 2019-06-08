@@ -12,7 +12,8 @@ if(mysqli_num_rows($result)>0)
 	{
 		$temp = [
 		'id'=>$row[0],
-		'name'=>$row[1]
+		'name'=>$row[1],
+		'img'=>$row[2]
 	];
 
 	array_push($category, $temp);

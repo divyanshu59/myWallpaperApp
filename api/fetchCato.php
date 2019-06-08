@@ -8,11 +8,13 @@ $result = mysqli_query($con, $query);
 $output = "
 	<table class='table table-bordered table-striped' id='tableShowData' style='font-family: Arial, sans-serif;'>
 		<tr>
-			<th>Sr. No</th>
-			<th>Name</th>
-			<th>Active</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th><center>Sr. No</center></th>
+			<th><center>Image</center></th>
+			<th><center>Name</center></th>
+			<th><center>Active</center></th>
+			<th><center>Edit</center></th>
+			<th><center>Delete</center></th>
+			
 		</tr>
 
 ";
@@ -26,6 +28,7 @@ if(mysqli_num_rows($result)>0)
 		$output .= "
 				<tr>
 					<td>$count</td>
+					<td><img src='$row[2]' width='100px;'></td>
 					<td>$row[1]</td>
 					<td>$active</td>
 					<td>
