@@ -21,14 +21,14 @@ foreach( $_FILES["fileToUpload"]["tmp_name"] as $key=>$tmp_name) {
     $file_name=$_FILES["fileToUpload"]["name"][$key];
     $file_tmp=$_FILES["fileToUpload"]["tmp_name"][$key];
     $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-
-    
+	$rand = randum(99999);
+    $newFileName = "WallPapaerZ$rand".time();
     if(in_array($ext,$extension)) {
-        if(!file_exists("../wallpaper/".$category."/".$file_name)) {
-            move_uploaded_file($file_tmp=$_FILES["fileToUpload"]["tmp_name"][$key],"../wallpaper/".$category."/".$file_name);
+        if(!file_exists("../wallpaper/".$category."/".$newFileName)) {
+            move_uploaded_file($file_tmp=$_FILES["fileToUpload"]["tmp_name"][$key],"../wallpaper/".$category."/".$newFileName);
              $date = date("Y-m-d h:i:sa");
 
-             $filenameToStore=basename($file_name,$ext);
+             $filenameToStore=basename($newFileName,$ext);
             $location = $base_url.'/wallpaper/'.$category."/".$file_name;
             $query = "INSERT INTO `wallpapers`(`name`, `category`, `upload_date`, `author_name`, `wallpaper`) VALUES ('$filenameToStore','$catId','$date','Admin', '$location')";
 
@@ -36,7 +36,8 @@ foreach( $_FILES["fileToUpload"]["tmp_name"] as $key=>$tmp_name) {
         }
         else {
             $filename=basename($file_name,$ext);
-            $newFileName=$filename.time().".".$ext;
+            $rand = randum(99999);
+   		 $newFileName = "WallPapaerZ$rand".time();
             move_uploaded_file($file_tmp=$_FILES["fileToUpload"]["tmp_name"][$key],"../wallpaper/".$category."/".$newFileName);
 
             $date = date("Y-m-d h:i:sa");
