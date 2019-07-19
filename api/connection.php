@@ -1,8 +1,8 @@
 <?php 
 ob_start();
-$db = "mywallpaperapp";
+$db = "mywallpaper";
 $host = "localhost";
-$user = "visa";
+$user = "mywall";
 $pass = "123456";
 
 // Create connection
@@ -14,5 +14,5 @@ if ($con->connect_error) {
 } 
 //echo "Connected successfully";
 
-$base_url = "http://localhost/myWallpaperApp/";
+$base_url = "http://localhost/mywallpapaer";
 ?>
